@@ -3,14 +3,15 @@
 # python3 my_script.py result.txt
 # python3 my_script.py -o result.txt -l DEBUG -c ...
 
-def my_function(*args, **kwargs):
-    print(args[0])
-    print(args[1])
-    print(args[2])
+import sys
 
-    print(kwargs['key01'])
-    print(kwargs['key02'])
+# positional argument 0 은 보통 지금 파일 이름.
+print(sys.argv[0])
 
+# positional argument 1 부터는 실행할 때 넣어주는 argument 들
+# argument를 주지 않으면 오류가 IndexError 발생
+print(sys.argv[1])
 
-my_function("hey", True, 19, 'don', key01="haha", key02="hihi")
-
+# 모든 argument를 list에 담아준다.
+print(sys.argv)
+print(type(sys.argv))
